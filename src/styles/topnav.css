@@ -1,0 +1,68 @@
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f2937;
+    color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .company-name {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .username {
+    margin-right: 10px;
+    font-size: 16px;
+  }
+  
+  .logout-icon {
+    font-size: 20px;
+    cursor: pointer;
+    color: #ffffff;
+    transition: color 0.3s;
+  }
+  
+  .logout-icon:hover {
+    color: #ff4d4f;
+  }
+  .nav-name{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  .nav-name img{
+    border-radius: 60%;
+    height: 30px;
+  }
+  
+  /* MOBILE VIEW ADJUSTMENTS */
+  @media (max-width: 768px) {
+    .hamburger-btn {
+      display: block; /* Display hamburger in mobile view */
+    }
+  
+    .user-info {
+      display: none; /* Hide the username and logout icon on the top nav */
+    }
+    .nav-name{
+        display: none;
+    }
+  }
+  
