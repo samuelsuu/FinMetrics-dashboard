@@ -1,24 +1,29 @@
-import React from "react";
-import { FaBars } from "react-icons/fa";
-import "../styles/topnav.css";
-import img from "../assets/pro.jpeg";
-import Logout from "./Logout";
+// Header.js
+import React from 'react';
 
-const TopNav = ({ toggleSidebar, username }) => {
+const Header = ({ searchTerm, handleSearchChange, filter, handleFilterChange }) => {
   return (
-    <div className="top-nav">
-      <div className="company-name">FinMetrics</div>
-      <div className="nav-name">
-        <img src={img} alt="samuel" />
-        {username}
-        <Logout />
+    <div className="header">
+      <h1 className="dashboard-title">FinMetrics Dashboard</h1>
+      <div className="search-and-filter">
+        <div className="search-bar">
+          <input
+            type="text"
+            placeholder="Search by username..."
+            value={searchTerm}
+            onChange={handleSearchChange}
+            className="search-input"
+          />
+        </div>
+        <select onChange={handleFilterChange} value={filter} className="filter-select">
+          <option value="daily">Daily</option>
+          <option value="weekly">Weekly</option>
+          <option value="monthly">Monthly</option>
+          <option value="custom">Custom</option>
+        </select>
       </div>
-      
-      <button className="hamburger-btn" onClick={toggleSidebar}>
-        <FaBars />
-      </button>
     </div>
   );
 };
 
-export default TopNav;
+export default Header;
