@@ -1,9 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import DashboardPage from './pages/DashboardPage';
-import TopNav from './components/TopNav';  // Import the new Header component
+import TopNav from './components/TopNav';
 import './App.css';
 
 const UserAcquisitionChart = React.lazy(() => import('./components/Dashboard/UserAcquisitionChart'));
@@ -30,14 +29,6 @@ function App() {
     return () => window.removeEventListener('resize', updateMobileView);
   }, []);
 
-  const handleFilterChange = (event) => {
-    setFilter(event.target.value);
-  };
-
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
-
   return (
     <Router>
       <div className="app-container">
@@ -45,12 +36,12 @@ function App() {
           <Sidebar isOpen={isSidebarOpen} isMobile={isMobile} username="Samuel Uwaeme" />
 
           <div className="content">
-            {/* Use Header component */}
-            <TopNav 
+            {/* Use TopNav component */}
+            <TopNav
               searchTerm={searchTerm}
-              handleSearchChange={handleSearchChange}
+              handleSearchChange={(e) => setSearchTerm(e.target.value)}
               filter={filter}
-              handleFilterChange={handleFilterChange}
+              handleFilterChange={(e) => setFilter(e.target.value)}
             />
 
             <React.Suspense fallback={<div>Loading...</div>}>

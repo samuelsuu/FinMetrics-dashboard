@@ -1,68 +1,61 @@
-.top-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1f2937;
-    color: #ffffff;
-    padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .company-name {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .hamburger-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  .user-info {
-    display: flex;
-    align-items: center;
-  }
-  
-  .username {
-    margin-right: 10px;
-    font-size: 16px;
-  }
-  
-  .logout-icon {
-    font-size: 20px;
-    cursor: pointer;
-    color: #ffffff;
-    transition: color 0.3s;
-  }
-  
-  .logout-icon:hover {
-    color: #ff4d4f;
-  }
-  .nav-name{
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-  }
-  .nav-name img{
-    border-radius: 60%;
-    height: 30px;
-  }
-  
-  /* MOBILE VIEW ADJUSTMENTS */
-  @media (max-width: 768px) {
-    .hamburger-btn {
-      display: block; /* Display hamburger in mobile view */
-    }
-  
-    .user-info {
-      display: none; /* Hide the username and logout icon on the top nav */
-    }
-    .nav-name{
-        display: none;
-    }
-  }
-  
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+}
+
+.dashboard-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.search-and-filter {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-bar {
+  position: relative;
+}
+
+.search-input {
+  padding: 8px 30px 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.filter-select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+}
+.profile-section img{
+  width: 40px;
+  border-radius: 50%;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  object-fit: cover;
+}
