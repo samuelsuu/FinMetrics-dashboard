@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaSearch } from 'react-icons/fa';
 import profile from "../assets/pro.jpeg";
+import "../styles/topnav.css";
 
 const TopNav = ({ searchTerm, handleSearchChange, filter, handleFilterChange }) => {
   return (
@@ -28,15 +29,8 @@ const TopNav = ({ searchTerm, handleSearchChange, filter, handleFilterChange }) 
           <option value="custom">Custom</option>
         </select>
       </div>
-      {/* Profile picture section */}
       <div className="profile-section">
-        <img
-          src={profile}
-          alt="User Profile"
-          className="profile-pic"
-          height={40}
-          style={{borderRadius: "50%"}}
-        />
+        <img src={profile} alt="User Profile" className="profile-pic" />
       </div>
     </div>
   );

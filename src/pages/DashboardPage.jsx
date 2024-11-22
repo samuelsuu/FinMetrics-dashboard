@@ -13,7 +13,7 @@ const DashboardPage = ({ filter, searchTerm }) => {
 
   return (
     <div className="dashboard-container">
-      {/* Add buttons to switch between different charts */}
+      {/* Chart Toggle Buttons */}
       <div className="chart-toggle">
         <button
           onClick={() => handleChartSwitch('userAcquisition')}
@@ -35,12 +35,25 @@ const DashboardPage = ({ filter, searchTerm }) => {
         </button>
       </div>
 
-      {/* Conditionally render the active chart */}
+      {/* Conditionally Render Charts */}
       <div className="chart-container">
-        {activeChart === 'userAcquisition' && <UserAcquisitionChart filter={filter} searchTerm={searchTerm} />}
-        {activeChart === 'transactionVolume' && <TransactionVolumeGraph filter={filter} searchTerm={searchTerm} />}
-        {activeChart === 'merchant' && <MerchantTracker filter={filter} searchTerm={searchTerm} />}
-      </div>
+  {activeChart === 'userAcquisition' && (
+    <React.Suspense fallback={<div>Loading User Acquisition Chart...</div>}>
+      <UserAcquisitionChart filter={filter} searchTerm={searchTerm} />
+    </React.Suspense>
+  )}
+  {activeChart === 'transactionVolume' && (
+    <React.Suspense fallback={<div>Loading Transaction Volume Graph...</div>}>
+      <TransactionVolumeGraph filter={filter} searchTerm={searchTerm} />
+    </React.Suspense>
+  )}
+  {activeChart === 'merchant' && (
+    <React.Suspense fallback={<div>Loading Merchant Tracker...</div>}>
+      <MerchantTracker filter={filter} searchTerm={searchTerm} />
+    </React.Suspense>
+  )}
+</div>
+
     </div>
   );
 };

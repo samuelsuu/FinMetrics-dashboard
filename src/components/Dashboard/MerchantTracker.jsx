@@ -106,14 +106,14 @@ const MerchantTracker = ({ filter }) => {
         <>
           {/* Line Chart for Engagement Over Time */}
           <div>
-            <h4>Engagement Over Time</h4>
-            <Line data={lineChartData} options={chartOptions} />
+          <h4>Engagement Comparison Across Merchants</h4>
+          <Bar data={barChartData} options={chartOptions} />
           </div>
           <hr /> {/* Divider */}
           {/* Bar Chart for Engagement Comparison */}
           <div>
-            <h4>Engagement Comparison Across Merchants</h4>
-            <Bar data={barChartData} options={chartOptions} />
+          <h4>Engagement Over Time</h4>
+          <Line data={lineChartData} options={chartOptions} />
           </div>
         </>
       ) : (

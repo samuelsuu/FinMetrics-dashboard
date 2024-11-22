@@ -33,7 +33,8 @@ function App() {
     <Router>
       <div className="app-container">
         <div className="main-layout">
-          <Sidebar isOpen={isSidebarOpen} isMobile={isMobile} username="Samuel Uwaeme" />
+          {/* Render Sidebar only if not mobile */}
+          {!isMobile && <Sidebar isOpen={isSidebarOpen} isMobile={isMobile} username="Samuel Uwaeme" />}
 
           <div className="content">
             {/* Use TopNav component */}
