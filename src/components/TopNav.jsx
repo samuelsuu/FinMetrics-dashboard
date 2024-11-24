@@ -2,11 +2,20 @@ import React from 'react';
 import { FaSearch } from 'react-icons/fa';
 import profile from "../assets/pro.jpeg";
 import "../styles/topnav.css";
+import { NavLink } from 'react-router-dom';
 
 const TopNav = ({ searchTerm, handleSearchChange, filter, handleFilterChange }) => {
   return (
     <div className="header">
-      <h1 className="dashboard-title">FinMetrics Dashboard</h1>
+      <h1 className="dashboard-title"><NavLink 
+  to="/" 
+  className={({ isActive }) => 
+    isActive ? "nav-link active" : "nav-link"
+  }
+>
+  FinMetrics Dashboard
+</NavLink>
+</h1>
       <div className="search-and-filter">
         <div className="search-bar">
           <input
