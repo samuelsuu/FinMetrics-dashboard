@@ -12,7 +12,7 @@ const DateFilter = ({ onDateChange }) => {
     } else {
       setIsCustomRange(false);
     }
-    onDateChange(selectedFilter, startDate, endDate); // Pass filter and custom date range if selected
+    onDateChange(selectedFilter, startDate, endDate); 
   };
 
   const handleStartDateChange = (event) => {

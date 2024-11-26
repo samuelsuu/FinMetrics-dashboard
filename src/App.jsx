@@ -33,11 +33,11 @@ function App() {
     <Router>
       <div className="app-container">
         <div className="main-layout">
-          {/* Render Sidebar only if not mobile */}
+         
           {!isMobile && <Sidebar isOpen={isSidebarOpen} isMobile={isMobile} username="Samuel Uwaeme" />}
 
           <div className="content">
-            {/* Use TopNav component */}
+           
             <TopNav
               searchTerm={searchTerm}
               handleSearchChange={(e) => setSearchTerm(e.target.value)}

@@ -15,7 +15,7 @@ const merchantData = [
     return merchantData.filter((item) => {
       const itemDate = new Date(item.date);
       const diffTime = now - itemDate;
-      const diffDays = diffTime / (1000 * 3600 * 24); // Convert time difference to days
+      const diffDays = diffTime / (1000 * 3600 * 24); 
   
       switch (filter) {
         case 'daily':

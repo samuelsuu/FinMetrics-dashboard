@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Line } from 'react-chartjs-2'; // Importing Line chart from react-chartjs-2
+import { Line } from 'react-chartjs-2'; 
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -10,7 +10,7 @@ import {
   Tooltip,
   Legend
 } from 'chart.js';
-import { getFilteredData } from '../../utils/userData'; // Import the data utility function
+import { getFilteredData } from '../../utils/userData'; 
 
 // Register chart.js components
 ChartJS.register(
@@ -28,23 +28,23 @@ const UserAcquisitionChart = ({ filter, searchTerm }) => {
 
   useEffect(() => {
     const fetchData = () => {
-      const filteredData = getFilteredData(filter, searchTerm); // Get filtered data
+      const filteredData = getFilteredData(filter, searchTerm); 
       setUserData(filteredData);
     };
 
     fetchData();
-  }, [filter, searchTerm]); // Re-fetch data when filter or search term changes
+  }, [filter, searchTerm]); 
 
-  // Prepare data for the chart
+  
   const chartData = {
-    labels: userData.map((item) => item.date), // Use date as the x-axis labels
+    labels: userData.map((item) => item.date), 
     datasets: [
       {
         label: 'Users Acquired',
-        data: userData.map((item) => item.count), // Data for the y-axis
+        data: userData.map((item) => item.count), 
         borderColor: 'rgba(75, 192, 192, 1)',
         backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        fill: true, // Fill the area under the line
+        fill: true, 
       },
     ],
   };

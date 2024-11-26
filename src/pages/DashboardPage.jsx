@@ -5,15 +5,14 @@ import MerchantTracker from '../components/Dashboard/MerchantTracker';
 import '../styles/dashboard.css';
 
 const DashboardPage = ({ filter, searchTerm }) => {
-  const [activeChart, setActiveChart] = useState('userAcquisition'); // State to control which chart to show
+  const [activeChart, setActiveChart] = useState('userAcquisition'); 
 
   const handleChartSwitch = (chartType) => {
-    setActiveChart(chartType); // Set active chart based on user selection
+    setActiveChart(chartType);
   };
 
   return (
     <div className="dashboard-container">
-      {/* Chart Toggle Buttons */}
       <div className="chart-toggle">
         <button
           onClick={() => handleChartSwitch('userAcquisition')}
@@ -35,7 +34,6 @@ const DashboardPage = ({ filter, searchTerm }) => {
         </button>
       </div>
 
-      {/* Conditionally Render Charts */}
       <div className="chart-container">
   {activeChart === 'userAcquisition' && (
     <React.Suspense fallback={<div>Loading User Acquisition Chart...</div>}>

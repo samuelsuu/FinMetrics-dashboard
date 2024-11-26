@@ -30,7 +30,6 @@ const MerchantTracker = ({ filter }) => {
   const [engagementData, setEngagementData] = useState([]);
 
   useEffect(() => {
-    // Fetch filtered data
     const filteredMerchants = getFilteredMerchants(filter);
     setMerchantData(filteredMerchants);
 

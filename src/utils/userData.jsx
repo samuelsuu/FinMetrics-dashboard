@@ -7,20 +7,20 @@ const mockData = [
     { date: '2024-09-15', username: 'michael_lee', count: 210 },
   ];
   
-  // Function to filter data based on timeframe
+  
   export const getFilteredData = (filter, searchTerm = '') => {
     const now = new Date();
   
-    // Filter by search term
+   
     const filteredBySearchTerm = mockData.filter((item) =>
       item.username.toLowerCase().includes(searchTerm.toLowerCase())
     );
   
-    // Apply timeframe filtering
+   
     return filteredBySearchTerm.filter((item) => {
       const itemDate = new Date(item.date);
       const diffTime = now - itemDate;
-      const diffDays = diffTime / (1000 * 3600 * 24); // Convert time difference to days
+      const diffDays = diffTime / (1000 * 3600 * 24); 
   
       switch (filter) {
         case 'daily':
